@@ -14,7 +14,7 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://mehdi-ennajeh.dev"; // TODO: Remplacer par ton vrai domaine
+const baseURL: string = "https://medev-tech.fr";
 
 const routes: RoutesConfig = {
   "/": true,
