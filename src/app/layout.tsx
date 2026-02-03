@@ -29,7 +29,15 @@ export async function generateMetadata() {
     ...metadata,
     icons: {
       icon: "/images/mehdi.jpg",
+      shortcut: "/images/mehdi.jpg",
       apple: "/images/mehdi.jpg",
+      other: [
+        {
+          rel: "icon",
+          type: "image/jpeg",
+          url: "/images/mehdi.jpg",
+        },
+      ],
     },
   };
 }
