@@ -23,6 +23,15 @@ export async function generateMetadata() {
     baseURL: baseURL,
     path: home.path,
     image: home.image,
+    viewport: {
+      width: "device-width",
+      initialScale: 1,
+      viewportFit: "cover",
+    },
+    themeColor: [
+      { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+      { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    ],
   });
 
   return {
@@ -128,6 +137,7 @@ export default async function RootLayout({
           margin="0"
           padding="0"
           horizontal="center"
+          className="safe-area-body"
         >
           <RevealFx fill position="absolute">
             <Background
