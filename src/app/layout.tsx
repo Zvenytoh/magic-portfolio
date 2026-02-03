@@ -16,6 +16,16 @@ import {
 import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+};
+
 export async function generateMetadata() {
   const metadata = await Meta.generate({
     title: home.title,
@@ -27,15 +37,6 @@ export async function generateMetadata() {
 
   return {
     ...metadata,
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
-      viewportFit: "cover",
-    },
-    themeColor: [
-      { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-      { media: "(prefers-color-scheme: dark)", color: "#000000" },
-    ],
     icons: {
       icon: "/images/mehdi.jpg",
       shortcut: "/images/mehdi.jpg",
