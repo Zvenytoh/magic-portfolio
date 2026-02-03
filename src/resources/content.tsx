@@ -2,48 +2,33 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Mehdi",
+  lastName: "Ennajeh",
+  name: "Mehdi Ennajeh",
+  role: "Développeur Full Stack",
+  avatar: "/images/mehdi.jpg",
+  email: "mehdiennajehfr@gmail.com",
+  location: "Europe/Paris",
+  languages: ["Français", "Anglais (B2)"],
 };
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <>Abonnez-vous à la newsletter de {person.firstName}</>,
+  description: <>Actualités sur le développement et l'entrepreneuriat</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/Zvenytoh",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/mehdi-ennajeh-8294272b6/",
     essential: true,
   },
   {
@@ -57,35 +42,39 @@ const social: Social = [
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  label: "Accueil",
+  title: `${person.name} | Développeur Full Stack`,
+  description: `Portfolio de ${person.name} - Développeur Full Stack & Entrepreneur basé à Arras, France`,
+  headline: <>À la croisée du code et du business</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">VTC SaaS</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Projet phare
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/vtc-saas",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Développeur passionné et jeune entrepreneur, je suis en alternance chez{" "}
+      <Text as="span" size="xl" weight="strong">Kiho Dev</Text> dans le cadre de mon{" "}
+      <Text as="span" size="xl" weight="strong">Bachelor IA à l'EPSI</Text>.
+      <br />
+      En parallèle, je co-pilote <Text as="span" size="xl" weight="strong">VTC ARRAS HDF</Text> en tant que Directeur Associé.
+    </>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "À propos",
+  title: `À propos – ${person.name}`,
+  description: `Découvrez ${person.name}, ${person.role} de 20 ans basé à Arras, France`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,7 +83,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -102,52 +91,114 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Développeur passionné et jeune entrepreneur de 20 ans basé à Arras, j'évolue à la croisée du code et du business.
+        Actuellement en alternance chez Kiho Dev dans le cadre de mon Bachelor IA à l'EPSI,
+        je me spécialise dans le développement Full Stack et l'intégration de solutions intelligentes.
+        J'aime construire des outils robustes qui répondent à de vrais besoins.
+        <br /><br />
+        Cette double casquette est ma force : je comprends les enjeux de rentabilité d'une entreprise
+        tout en ayant les compétences techniques pour les résoudre.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Expériences",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Kiho Dev",
+        timeframe: "Sept. 2025 - Présent",
+        role: "Développeur Full Stack (Alternance)",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Développement d'applications web et mobile en environnement professionnel.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Travail en mode hybride à Liévin, Hauts-de-France.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Medev - Solutions web et mobile",
+        timeframe: "Juil. 2025 - Présent",
+        role: "Freelance",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Création de sites et applications web sur mesure.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Développement mobile multiplateforme avec Flutter.
+          </>,
+          <>
+            Conseil, optimisation et accompagnement technique.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "VTC ARRAS HDF",
+        timeframe: "Juin 2023 - Présent",
+        role: "Directeur Associé",
+        achievements: [
+          <>
+            <strong>Transformation Digitale :</strong> Modernisation des processus et implantation
+            de nouveaux systèmes de gestion et de facturation.
+          </>,
+          <>
+            <strong>Stratégie Opérationnelle :</strong> Gestion des investissements (flotte de véhicules)
+            et appui aux décisions de direction.
+          </>,
+          <>
+            <strong>Marketing :</strong> Définition de l'identité visuelle et des supports de communication.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Cordonnerie François Fernez",
+        timeframe: "Janv. 2025 - Fév. 2025",
+        role: "Stagiaire Développeur Web",
+        achievements: [
+          <>
+            Développement de site vitrine avec Symfony et JavaScript.
+          </>,
+          <>
+            Intégration de fonctionnalités interactives pour améliorer l'expérience utilisateur.
+          </>,
+          <>
+            Mise en place du back-end sous Symfony, gestion des données et optimisation des performances.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "VTC ARRAS HDF",
+        timeframe: "Mai 2024 - Juil. 2024",
+        role: "Stagiaire Développeur Web",
+        achievements: [
+          <>
+            Création d'une plateforme web sur WordPress avec intégration d'un système de réservation.
+          </>,
+          <>
+            Installation et configuration d'un environnement d'hébergement dédié pour le site.
+          </>,
+          <>
+            Optimisation des performances du site via la personnalisation de plugins et la gestion du cache.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Nausicaà",
+        timeframe: "Nov. 2021 - Déc. 2021",
+        role: "Technicien Réparation Informatique",
+        achievements: [
+          <>
+            Déploiement de solutions logicielles et matérielles pour assurer la fiabilité des systèmes.
+          </>,
+          <>
+            Maintenance préventive et corrective avec analyses précises et interventions ciblées.
           </>,
         ],
         images: [],
@@ -155,78 +206,140 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Formation",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "EPSI - L'école d'ingénierie informatique (Arras)",
+        description: (
+          <>
+            Bachelor DevOps Fullstack – Spécialisation Développeur IA
+            <br />
+            <Text onBackground="neutral-weak" variant="body-default-s">Sept. 2025 - En cours</Text>
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Lycée Guy Mollet (Arras)",
+        description: (
+          <>
+            BTS Services Informatiques aux Organisations (SIO SLAM)
+            <br />
+            <Text onBackground="neutral-weak" variant="body-default-s">Sept. 2023 - Juin 2025</Text>
+            <br />
+            <Text onBackground="neutral-weak" variant="body-default-xs">
+              Développement web, Bases de données, Développement mobile, Cybersécurité
+            </Text>
+          </>
+        ),
+      },
+      {
+        name: "Lycée Édouard Branly (Boulogne-sur-Mer)",
+        description: (
+          <>
+            Baccalauréat professionnel Systèmes Numériques — <strong>Mention Bien</strong>
+            <br />
+            <Text onBackground="neutral-weak" variant="body-default-s">Sept. 2020 - Juin 2023</Text>
+          </>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Compétences techniques",
     skills: [
       {
-        title: "Figma",
+        title: "Développement Web",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            <strong>Front-end :</strong> HTML, CSS, JavaScript, React, Next.js, Angular
+            <br />
+            <strong>Back-end :</strong> PHP, Symfony, Node.js, Java, Doctrine ORM
+            <br />
+            <strong>API & BDD :</strong> API Platform, API REST, SQL, PostgreSQL, phpMyAdmin
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "React", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "Angular", icon: "angular" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Développement Mobile",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Flutter, Dart — Applications multiplateformes iOS & Android</>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Flutter", icon: "flutter" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "DevOps & Infrastructure",
+        description: (
+          <>
+            <strong>VPS :</strong> Gestion de serveurs dédiés, Coolify, Docker
+            <br />
+            <strong>CI/CD :</strong> GitHub Actions, GitHub Apps, Pipelines automatisés
+            <br />
+            <strong>Automatisation :</strong> N8N, scripts Bash
+          </>
+        ),
+        tags: [
+          { name: "Docker", icon: "docker" },
         ],
+        images: [],
+      },
+      {
+        title: "Systèmes & Réseaux Linux",
+        description: (
+          <>
+            <strong>Administration :</strong> Arch, openSUSE, Fedora, Ubuntu, Debian, Manjaro
+            <br />
+            <strong>Réseaux :</strong> Configuration IP, iptables, SSH
+            <br />
+            <strong>Paquets :</strong> pacman, zypper, apt, dnf
+          </>
+        ),
+        tags: [
+          { name: "Linux", icon: "linux" },
+        ],
+        images: [],
+      },
+      {
+        title: "Outils & Méthodologie",
+        description: (
+          <>
+            <strong>Versioning :</strong> Git, GitHub
+            <br />
+            <strong>Gestion de paquets :</strong> npm, Yarn
+            <br />
+            <strong>Méthodologie :</strong> Agile, Scrum
+          </>
+        ),
+        tags: [
+          { name: "Git", icon: "git" },
+        ],
+        images: [],
+      },
+      {
+        title: "Soft Skills",
+        description: (
+          <>
+            <strong>Organisation :</strong> Gestion du temps et priorisation des tâches
+            <br />
+            <strong>Esprit d'équipe :</strong> Collaboration et soutien des collègues
+            <br />
+            <strong>Communication :</strong> Expression claire des idées
+            <br />
+            <strong>Adaptabilité :</strong> Ajustement rapide aux changements
+          </>
+        ),
+        tags: [],
+        images: [],
       },
     ],
   },
@@ -235,28 +348,22 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Articles & Réflexions",
+  description: `Découvrez les articles de ${person.name} sur le développement et l'entrepreneuriat`,
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "Projets",
+  title: `Projets – ${person.name}`,
+  description: `Projets de développement réalisés par ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  label: "Galerie",
+  title: `Galerie – ${person.name}`,
+  description: `Collection de photos par ${person.name}`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
@@ -275,26 +382,6 @@ const gallery: Gallery = {
     },
     {
       src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
       alt: "image",
       orientation: "vertical",
     },
