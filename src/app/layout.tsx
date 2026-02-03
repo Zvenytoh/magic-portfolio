@@ -23,6 +23,10 @@ export async function generateMetadata() {
     baseURL: baseURL,
     path: home.path,
     image: home.image,
+  });
+
+  return {
+    ...metadata,
     viewport: {
       width: "device-width",
       initialScale: 1,
@@ -32,10 +36,6 @@ export async function generateMetadata() {
       { media: "(prefers-color-scheme: light)", color: "#ffffff" },
       { media: "(prefers-color-scheme: dark)", color: "#000000" },
     ],
-  });
-
-  return {
-    ...metadata,
     icons: {
       icon: "/images/mehdi.jpg",
       shortcut: "/images/mehdi.jpg",
