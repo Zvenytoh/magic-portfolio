@@ -75,7 +75,7 @@ body {
 
 .safe-area-body {
   min-height: 100vh !important;
-  padding-top: env(safe-area-inset-top) !important;
+  /* padding-top: env(safe-area-inset-top) !important; - Removed to fix black bar */
   background-attachment: fixed;
 }
 
