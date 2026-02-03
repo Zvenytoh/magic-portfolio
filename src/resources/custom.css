@@ -60,17 +60,7 @@ body {
   position: relative;
 }
 
-/* Force masks to stay reasonably sized on mobile */
 @media (max-width: 768px) {
-  [class*='Fade'][class*='mask'] {
-    max-height: 160px !important;
-  }
-
-  /* Fix potential horizontal overflow causing the 'rectangle' look */
-  * {
-    max-width: 100vw !important;
-    box-sizing: border-box;
-  }
 
   header,
   [as="header"] {

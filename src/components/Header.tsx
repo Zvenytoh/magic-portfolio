@@ -47,17 +47,6 @@ export const Header = () => {
 
   return (
     <>
-      <Fade s={{ hide: false }} fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade
-        hide
-        s={{ hide: false }}
-        fillWidth
-        position="fixed"
-        bottom="0"
-        to="top"
-        height={80}
-        zIndex={9}
-      />
       <Row
         fitHeight
         className={styles.position}
@@ -89,12 +78,20 @@ export const Header = () => {
             shadow="l"
             padding="4"
             s={{
-              padding: "8",
+              padding: "12",
             }}
             horizontal="center"
             zIndex={1}
           >
-            <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+            <Row
+              gap="4"
+              s={{
+                gap: "8",
+              }}
+              vertical="center"
+              textVariant="body-default-s"
+              suppressHydrationWarning
+            >
               {routes["/"] && (
                 <ToggleButton
                   prefixIcon="home"
@@ -103,7 +100,14 @@ export const Header = () => {
                   aria-label="Accueil"
                 />
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              <Line
+                background="neutral-alpha-medium"
+                vert
+                maxHeight="24"
+                s={{
+                  maxHeight: "32",
+                }}
+              />
               {routes["/about"] && (
                 <>
                   <Row s={{ hide: true }}>
@@ -186,7 +190,14 @@ export const Header = () => {
               )}
               {display.themeSwitcher && (
                 <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
+                  <Line
+                    background="neutral-alpha-medium"
+                    vert
+                    maxHeight="24"
+                    s={{
+                      maxHeight: "32",
+                    }}
+                  />
                   <ThemeToggle />
                 </>
               )}
