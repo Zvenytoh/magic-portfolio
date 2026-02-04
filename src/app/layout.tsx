@@ -37,6 +37,10 @@ export async function generateMetadata() {
 
   return {
     ...metadata,
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "black-translucent",
+    },
     icons: {
       icon: "/images/mehdi.jpg",
       shortcut: "/images/mehdi.jpg",
