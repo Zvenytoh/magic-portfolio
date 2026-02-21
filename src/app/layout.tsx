@@ -42,14 +42,14 @@ export async function generateMetadata() {
       statusBarStyle: "black-translucent",
     },
     icons: {
-      icon: "/images/mehdi.jpg",
-      shortcut: "/images/mehdi.jpg",
-      apple: "/images/mehdi.jpg",
+      icon: "/images/mehdi.jpg?v=1",
+      shortcut: "/images/mehdi.jpg?v=1",
+      apple: "/images/mehdi.jpg?v=1",
       other: [
         {
           rel: "icon",
           type: "image/jpeg",
-          url: "/images/mehdi.jpg",
+          url: "/images/mehdi.jpg?v=1",
         },
       ],
     },

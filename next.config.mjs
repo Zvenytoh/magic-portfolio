@@ -10,6 +10,15 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
+    localPatterns: [
+      {
+        pathname: '/images/**',
+        search: '?v=1',
+      },
+      {
+        pathname: '/images/**',
+      }
+    ],
     remotePatterns: [
       {
         protocol: "https",
