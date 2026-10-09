@@ -1,0 +1,117 @@
+---
+title: "Budget — Gestion financière personnelle"
+publishedAt: "2026-10-09"
+summary: "Application mobile de suivi des dépenses, revenus et budgets, avec une interface en français et des données conservées sur l'appareil. Développée avec React Native, Expo et SQLite."
+images: []
+team:
+  - name: "Mehdi Ennajeh"
+    role: "Développeur Full Stack"
+    avatar: "/images/mehdi.jpg?v=1"
+    linkedIn: "https://www.linkedin.com/in/mehdi-ennajeh-8294272b6/"
+---
+
+## Le projet
+
+Budget réunit dépenses, revenus, comptes manuels et objectifs budgétaires dans une application mobile. L'objectif : comprendre rapidement ses finances et enregistrer ses opérations au quotidien, dans une interface claire, entièrement en français et en euros.
+
+Le projet associe une expérience mobile soignée à une architecture locale. Les données sont conservées sur l'appareil, sans compte utilisateur, connexion bancaire, backend ou synchronisation distante.
+
+## Le besoin
+
+Combien ai-je dépensé ce mois-ci ? Quelles catégories concentrent mes dépenses ? Où en suis-je par rapport à mon budget ? Budget rassemble ces réponses et les actions courantes dans cinq onglets complémentaires.
+
+## Cinq onglets pour le quotidien
+
+### Accueil
+
+Le tableau de bord met en avant le solde suivi, les dépenses et revenus du mois, l'objectif mensuel et les transactions récentes. Des raccourcis permettent d'ajouter une dépense, un revenu ou de définir un budget.
+
+### Transactions
+
+L'historique regroupe dépenses et revenus, avec recherche et filtres. Un formulaire partagé adapte ses champs au type d'opération et accepte les conventions françaises, comme **12,50 €**.
+
+Les erreurs de validation apparaissent près des champs. Les valeurs saisies sont conservées si l'enregistrement échoue, et un verrou empêche une double pression de créer deux opérations. La suppression demande une confirmation ; les listes et totaux concernés sont actualisés après chaque écriture réussie.
+
+### Budgets
+
+Un objectif mensuel global et des objectifs par catégorie permettent de suivre les dépenses : Alimentation, Transport, Logement, Loisirs et Autres. Les objectifs par catégorie restent indépendants du budget global ; ils ne constituent pas une répartition automatique de celui-ci.
+
+### Statistiques
+
+Les statistiques présentent le total du mois sélectionné, la répartition par catégorie et l'évolution sur six mois. Elles sont calculées à partir des transactions locales. Sans historique, des messages expliquent ce qui apparaîtra après les premiers enregistrements.
+
+### Réglages et comptes
+
+Les réglages donnent accès aux comptes manuels, aux thèmes **clair, sombre et système**, ainsi qu'aux diagnostics des services natifs. La préférence d'apparence est persistée. Les vérifications du stockage sécurisé et des notifications locales sont déclenchées par l'utilisateur ; aucune permission de notification n'est demandée au lancement.
+
+## Une expérience mobile cohérente
+
+L'interface utilise une palette violette, des surfaces arrondies et une hiérarchie typographique qui distingue montants, titres et informations secondaires. Le dégradé de l'accueil met en valeur la synthèse financière ; les autres écrans reprennent les mêmes cartes, champs et espacements.
+
+La navigation repose sur une **barre flottante à effet de verre**, avec icônes et labels visibles. Une capsule violette animée signale l'onglet actif. Le rendu s'adapte à la plateforme : Liquid Glass natif sur les versions et appareils iOS compatibles, verre dépoli avec Expo Blur ailleurs, ou surface opaque selon les préférences d'accessibilité.
+
+Les animations restent courtes et tiennent compte de la réduction des mouvements. Les formulaires prévoient des labels, des erreurs explicites, de grandes cibles tactiles et une prise en compte du clavier. Un espace est réservé à la barre flottante pour qu'elle ne masque pas le contenu. Les longues listes sont virtualisées.
+
+## Une architecture locale et maintenable
+
+SQLite est la source de vérité persistante pour les transactions, comptes et budgets. L'accès aux données suit une séparation explicite :
+
+**SQLite → Drizzle ORM → repositories → hooks de données → écrans**
+
+Les routes Expo Router restent légères ; les écrans et leur logique sont regroupés par fonctionnalité. Chaque outil de gestion d'état a une responsabilité distincte :
+
+- **TanStack Query** gère les lectures, le cache et les invalidations ciblées après une écriture.
+- **Zustand** conserve les préférences et les petits états d'interface.
+- **SQLite** assure la persistance des données financières.
+
+Le démarrage charge les préférences, ouvre et configure SQLite, applique les migrations Drizzle embarquées, puis affiche les écrans métier. En cas d'erreur de migration, un écran propose de réessayer sans supprimer automatiquement la base.
+
+## La fiabilité des données financières
+
+Les montants sont stockés en **centimes entiers** : une saisie de 12,50 € devient **1250** en base. Cette représentation évite les erreurs de précision des nombres à virgule flottante.
+
+La conversion est centralisée : montants positifs, borne maximale, deux décimales au plus et refus des formats ambigus. L'affichage suit le format français dans toute l'application.
+
+Les dates métier utilisent le format **YYYY-MM-DD** pour préserver le jour choisi sans décalage lié à une conversion à minuit UTC. Les enregistrements reçoivent des UUID et les catégories utilisent des identifiants stables, indépendants des libellés affichés.
+
+Les contraintes de la base complètent la validation des formulaires. Les totaux sont calculés en SQL et les index soutiennent les lectures chronologiques et mensuelles.
+
+## Confidentialité et services natifs
+
+Aucun backend, analytics ou service de synchronisation n'est intégré au fonctionnement métier. Les données financières restent dans SQLite sur l'appareil. Les sauvegardes du système d'exploitation peuvent toutefois en conserver une copie, selon la configuration de l'appareil.
+
+SecureStore est réservé aux petites informations sensibles et aux besoins futurs. Il ne stocke pas les transactions et ne constitue pas un chiffrement de SQLite. Les notifications sont locales et leur permission est demandée uniquement après une action explicite.
+
+## Stack technique
+
+### Application et interface
+
+- **React Native, Expo SDK 57 et TypeScript strict** : application mobile et intégration native.
+- **Expo Router** : navigation et organisation des routes.
+- **NativeWind, Tailwind CSS et React Native Reusables** : styles et composants UI locaux.
+- **Lucide React Native, Reanimated, Expo Blur et Expo Glass Effect** : icônes, animations et surfaces vitrées.
+
+### Données et formulaires
+
+- **Expo SQLite, Drizzle ORM et Drizzle Kit** : persistance locale, accès typé et migrations.
+- **TanStack Query et Zustand** : cache des données, préférences et état d'interface.
+- **React Hook Form et Zod** : formulaires et validation.
+- **date-fns** : calculs et formatage des dates.
+- **Expo SecureStore et Expo Notifications** : petites valeurs sensibles et notifications locales.
+
+### Qualité
+
+- **Jest et React Native Testing Library** : tests unitaires et de composants.
+- **ESLint et Prettier** : qualité et cohérence du code.
+
+## Validation et limites
+
+Le projet comprend des tests sur la conversion des montants, les dates, les schémas de validation, les formulaires et les opérations de données. La validation distingue les tests simulés des vérifications avec SQLite réel. Les contrôles de typage, de lint, de formatage et de compatibilité Expo complètent ces tests.
+
+L'aperçu Web permet de travailler sur le design et de réaliser des captures des cinq onglets en clair et en sombre. Les comportements spécifiques à iOS, notamment le **Liquid Glass natif**, restent à vérifier sur un appareil compatible.
+
+## Ce que ce projet met en valeur
+
+Budget réunit conception des parcours, design d'interface, intégration native, modélisation financière et persistance locale. Il met l'accent sur la séparation des responsabilités, la précision des données et la cohérence de l'expérience utilisateur.
+
+L'architecture prépare des extensions comme les transactions récurrentes, les objectifs d'épargne ou l'export des données. Ces fonctionnalités restent des pistes d'évolution du socle actuel.

@@ -45,27 +45,39 @@ const home: Home = {
   label: "Accueil",
   title: `${person.name} | Développeur Full Stack`,
   description: `Portfolio de ${person.name} - Développeur Full Stack & Entrepreneur basé à Arras, France`,
-  headline: <>À la croisée du code et du business</>,
+  headline: <>Des applications utiles, du code au déploiement</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">VTC SaaS</strong>{" "}
+        <strong className="ml-4">Budget</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Projet phare
         </Text>
       </Row>
     ),
-    href: "/work/vtc-saas",
+    href: "/work/budget",
   },
   subline: (
     <>
-      Développeur passionné et jeune entrepreneur, je suis en alternance chez{" "}
-      <Text as="span" size="xl" weight="strong">Kiho Dev</Text> dans le cadre de mon{" "}
-      <Text as="span" size="xl" weight="strong">Bachelor IA à l'EPSI</Text>.
+      Je conçois des applications web et mobile, j'héberge mes services et je déploie mes projets.
       <br />
-      En parallèle, je co-pilote <Text as="span" size="xl" weight="strong">VTC ARRAS HDF</Text> en tant que Directeur Associé.
+      Titulaire du{" "}
+      <Text as="span" size="xl" weight="strong">
+        Bachelor DevOps Fullstack – Développeur IA
+      </Text>{" "}
+      de{" "}
+      <Text as="span" size="xl" weight="strong">
+        l'EPSI
+      </Text>
+      .
+      <br />
+      En parallèle, je co-pilote{" "}
+      <Text as="span" size="xl" weight="strong">
+        VTC ARRAS HDF
+      </Text>{" "}
+      en tant que Directeur Associé.
     </>
   ),
 };
@@ -91,13 +103,22 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Développeur passionné et jeune entrepreneur de 20 ans basé à Arras, j'évolue à la croisée du code et du business.
-        Actuellement en alternance chez Kiho Dev dans le cadre de mon Bachelor IA à l'EPSI,
-        je me spécialise dans le développement Full Stack et l'intégration de solutions intelligentes.
-        J'aime construire des outils robustes qui répondent à de vrais besoins.
-        <br /><br />
-        Cette double casquette est ma force : je comprends les enjeux de rentabilité d'une entreprise
-        tout en ayant les compétences techniques pour les résoudre.
+        Développeur et jeune entrepreneur de 20 ans basé à Arras, je conçois des applications web et
+        mobile, de l'interface à leur déploiement. Diplômé du Bachelor DevOps Fullstack de l'EPSI,
+        avec une spécialisation Développeur IA, j'ai réalisé une alternance chez Kiho Dev :
+        développement web avec Angular et Spring Boot, applications mobiles avec Flutter, et
+        pratique avancée de SQL Server. Ma formation m'a également permis de travailler sur des
+        architectures microservices, Oracle, Next.js et le développement de modèles d'IA. J'aime
+        construire des outils robustes qui répondent à de vrais besoins.
+        <br />
+        <br />
+        J'héberge également mes services et déploie les sites de mes projets avec Docker, Dokploy et
+        Coolify. Je gère les domaines avec le DNS Cloudflare et le stockage de fichiers avec
+        Cloudflare R2.
+        <br />
+        <br />
+        Cette double casquette est ma force : je comprends les enjeux de rentabilité d'une
+        entreprise tout en ayant les compétences techniques pour les résoudre.
       </>
     ),
   },
@@ -107,15 +128,14 @@ const about: About = {
     experiences: [
       {
         company: "Kiho Dev",
-        timeframe: "Sept. 2025 - Présent",
+        timeframe: "Sept. 2025 - Sept. 2026",
         role: "Développeur Full Stack (Alternance)",
         achievements: [
-          <>
-            Développement d'applications web et mobile en environnement professionnel.
-          </>,
-          <>
-            Travail en mode hybride à Liévin, Hauts-de-France.
-          </>,
+          <>Développement d'interfaces web avec Angular pour des applications professionnelles.</>,
+          <>Développement de services back-end avec Java et Spring Boot.</>,
+          <>Développement d'applications mobiles multiplateformes avec Flutter et Dart.</>,
+          <>Pratique avancée de SQL Server pour la gestion des données applicatives.</>,
+          <>Travail en mode hybride à Liévin, Hauts-de-France.</>,
         ],
         images: [],
       },
@@ -124,15 +144,9 @@ const about: About = {
         timeframe: "Juil. 2025 - Présent",
         role: "Freelance",
         achievements: [
-          <>
-            Création de sites et applications web sur mesure.
-          </>,
-          <>
-            Développement mobile multiplateforme avec Flutter.
-          </>,
-          <>
-            Conseil, optimisation et accompagnement technique.
-          </>,
+          <>Création de sites et applications web sur mesure.</>,
+          <>Développement mobile multiplateforme avec Flutter.</>,
+          <>Conseil, optimisation et accompagnement technique.</>,
         ],
         images: [],
       },
@@ -146,11 +160,12 @@ const about: About = {
             de nouveaux systèmes de gestion et de facturation.
           </>,
           <>
-            <strong>Stratégie Opérationnelle :</strong> Gestion des investissements (flotte de véhicules)
-            et appui aux décisions de direction.
+            <strong>Stratégie Opérationnelle :</strong> Gestion des investissements (flotte de
+            véhicules) et appui aux décisions de direction.
           </>,
           <>
-            <strong>Marketing :</strong> Définition de l'identité visuelle et des supports de communication.
+            <strong>Marketing :</strong> Définition de l'identité visuelle et des supports de
+            communication.
           </>,
         ],
         images: [],
@@ -160,14 +175,11 @@ const about: About = {
         timeframe: "Janv. 2025 - Fév. 2025",
         role: "Stagiaire Développeur Web",
         achievements: [
+          <>Développement de site vitrine avec Symfony et JavaScript.</>,
+          <>Intégration de fonctionnalités interactives pour améliorer l'expérience utilisateur.</>,
           <>
-            Développement de site vitrine avec Symfony et JavaScript.
-          </>,
-          <>
-            Intégration de fonctionnalités interactives pour améliorer l'expérience utilisateur.
-          </>,
-          <>
-            Mise en place du back-end sous Symfony, gestion des données et optimisation des performances.
+            Mise en place du back-end sous Symfony, gestion des données et optimisation des
+            performances.
           </>,
         ],
         images: [],
@@ -178,13 +190,13 @@ const about: About = {
         role: "Stagiaire Développeur Web",
         achievements: [
           <>
-            Création d'une plateforme web sur WordPress avec intégration d'un système de réservation.
+            Création d'une plateforme web sur WordPress avec intégration d'un système de
+            réservation.
           </>,
+          <>Installation et configuration d'un environnement d'hébergement dédié pour le site.</>,
           <>
-            Installation et configuration d'un environnement d'hébergement dédié pour le site.
-          </>,
-          <>
-            Optimisation des performances du site via la personnalisation de plugins et la gestion du cache.
+            Optimisation des performances du site via la personnalisation de plugins et la gestion
+            du cache.
           </>,
         ],
         images: [],
@@ -195,7 +207,8 @@ const about: About = {
         role: "Technicien Réparation Informatique",
         achievements: [
           <>
-            Déploiement de solutions logicielles et matérielles pour assurer la fiabilité des systèmes.
+            Déploiement de solutions logicielles et matérielles pour assurer la fiabilité des
+            systèmes.
           </>,
           <>
             Maintenance préventive et corrective avec analyses précises et interventions ciblées.
@@ -215,7 +228,32 @@ const about: About = {
           <>
             Bachelor DevOps Fullstack – Spécialisation Développeur IA
             <br />
-            <Text onBackground="neutral-weak" variant="body-default-s">Sept. 2025 - En cours</Text>
+            <Text onBackground="neutral-weak" variant="body-default-s">
+              Diplôme obtenu
+            </Text>
+            <br />
+            <br />
+            <Text as="span" onBackground="neutral-medium" variant="body-default-m">
+              Une formation associant développement web, architecture applicative, bases de données
+              et intelligence artificielle, à travers des projets pédagogiques.
+              <br />
+              <br />
+              <strong>Architecture microservices :</strong> conception d'applications organisées en
+              services distincts, avec une attention portée à la séparation des responsabilités et
+              aux échanges entre services.
+              <br />
+              <br />
+              <strong>Développement web :</strong> réalisation d'applications avec Next.js, en
+              associant interfaces et logique applicative.
+              <br />
+              <br />
+              <strong>Bases de données :</strong> utilisation d'Oracle et de SQL dans les projets de
+              formation, pour travailler sur les données des applications.
+              <br />
+              <br />
+              <strong>Intelligence artificielle :</strong> conception et développement de modèles
+              d'IA dans le cadre de la spécialisation Développeur IA.
+            </Text>
           </>
         ),
       },
@@ -225,7 +263,9 @@ const about: About = {
           <>
             BTS Services Informatiques aux Organisations (SIO SLAM)
             <br />
-            <Text onBackground="neutral-weak" variant="body-default-s">Sept. 2023 - Juin 2025</Text>
+            <Text onBackground="neutral-weak" variant="body-default-s">
+              Sept. 2023 - Juin 2025
+            </Text>
             <br />
             <Text onBackground="neutral-weak" variant="body-default-xs">
               Développement web, Bases de données, Développement mobile, Cybersécurité
@@ -239,7 +279,9 @@ const about: About = {
           <>
             Baccalauréat professionnel Systèmes Numériques — <strong>Mention Bien</strong>
             <br />
-            <Text onBackground="neutral-weak" variant="body-default-s">Sept. 2020 - Juin 2023</Text>
+            <Text onBackground="neutral-weak" variant="body-default-s">
+              Sept. 2020 - Juin 2023
+            </Text>
           </>
         ),
       },
@@ -255,33 +297,64 @@ const about: About = {
           <>
             <strong>Front-end :</strong> HTML, CSS, JavaScript, React, Next.js, Angular
             <br />
-            <strong>Back-end :</strong> PHP, Symfony, Node.js, Java, Doctrine ORM
+            <strong>Back-end :</strong> PHP, Symfony, Node.js, Java, Spring Boot, Doctrine ORM
             <br />
-            <strong>API & BDD :</strong> API Platform, API REST, SQL, PostgreSQL, phpMyAdmin
+            <strong>Architecture :</strong> Microservices, séparation des responsabilités, échanges
+            entre services
+            <br />
+            <strong>API & BDD :</strong> API Platform, API REST, SQL, SQL Server (niveau avancé),
+            Oracle, PostgreSQL, phpMyAdmin
           </>
         ),
         tags: [
           { name: "React", icon: "react" },
           { name: "Next.js", icon: "nextjs" },
           { name: "Angular", icon: "angular" },
+          { name: "Spring Boot" },
+          { name: "SQL Server" },
+          { name: "Oracle" },
         ],
         images: [],
       },
       {
         title: "Développement Mobile",
         description: (
-          <>Flutter, Dart — Applications multiplateformes iOS & Android</>
+          <>
+            <strong>Applications :</strong> React Native, Expo, Flutter, Dart — iOS & Android
+            <br />
+            <strong>Navigation & interface :</strong> Expo Router, NativeWind
+            <br />
+            <strong>Données locales :</strong> SQLite, Drizzle ORM, TanStack Query
+          </>
         ),
         tags: [
           { name: "Flutter", icon: "flutter" },
+          { name: "React Native" },
+          { name: "Expo" },
+          { name: "SQLite" },
         ],
+        images: [],
+      },
+      {
+        title: "Intelligence artificielle",
+        description: (
+          <>
+            Conception et développement de modèles d'intelligence artificielle dans le cadre des
+            projets pédagogiques de ma spécialisation Développeur IA à l'EPSI.
+          </>
+        ),
+        tags: [{ name: "Modèles d'IA" }],
         images: [],
       },
       {
         title: "DevOps & Infrastructure",
         description: (
           <>
-            <strong>VPS :</strong> Gestion de serveurs dédiés, Coolify, Docker
+            <strong>Hébergement :</strong> Gestion de VPS, Docker, services auto-hébergés
+            <br />
+            <strong>Déploiement :</strong> Dokploy, Coolify, mise en ligne des sites de mes projets
+            <br />
+            <strong>Domaines & stockage :</strong> DNS Cloudflare, stockage objet Cloudflare R2
             <br />
             <strong>CI/CD :</strong> GitHub Actions, GitHub Apps, Pipelines automatisés
             <br />
@@ -290,6 +363,9 @@ const about: About = {
         ),
         tags: [
           { name: "Docker", icon: "docker" },
+          { name: "Dokploy" },
+          { name: "Coolify" },
+          { name: "Cloudflare R2" },
         ],
         images: [],
       },
@@ -304,9 +380,7 @@ const about: About = {
             <strong>Paquets :</strong> pacman, zypper, apt, dnf
           </>
         ),
-        tags: [
-          { name: "Linux", icon: "linux" },
-        ],
+        tags: [{ name: "Linux", icon: "linux" }],
         images: [],
       },
       {
@@ -320,9 +394,7 @@ const about: About = {
             <strong>Méthodologie :</strong> Agile, Scrum
           </>
         ),
-        tags: [
-          { name: "Git", icon: "git" },
-        ],
+        tags: [{ name: "Git", icon: "git" }],
         images: [],
       },
       {
